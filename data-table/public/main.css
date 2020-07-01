@@ -21,7 +21,39 @@ body {
   justify-content: center;
   align-items: center;
 }
+table {
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
+}
 table thead {
-  background-color: rgb(12, 184, 184);
+  background-color: #009578;
   color: #fff;
+  text-align: left;
+}
+table th {
+  padding: 10px 15px;
+}
+table tbody tr {
+  border-bottom: 2px solid #009578;
+}
+table tbody tr:nth-of-type(even) {
+  background-color: #eee;
+}
+table tr td {
+  padding: 10px 15px;
+}
+
+table tfoot button {
+  background-color: #009578;
+  padding: 5px 10px;
+  border: none;
+  color: #fff;
+  box-shadow: 0 0 3px rgb(0, 0, 0, 0.3);
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+table tfoot button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 3px rgb(0, 0, 0, 0.3);
 }

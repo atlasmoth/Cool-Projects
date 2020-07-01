@@ -8,7 +8,6 @@ const app = express();
 
 function dataGen() {
   return {
-    headers: ["Name", "Age", "Profession", "Country"],
     rows: Array.from(new Array(10), () => {
       return [
         chance.name(),
@@ -25,8 +24,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.get("/data", (req, res) => {
-  const { headers, rows } = dataGen();
-  res.json({ headers, rows, updatedAt: new Date().toISOString() });
+  const { rows } = dataGen();
+  res.json({ rows, updatedAt: new Date().toLocaleTimeString() });
 });
 
 // error catch all
