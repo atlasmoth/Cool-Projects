@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+  height: 100%;
+  font-size: clamp(16px, 3vw, 24px);
+}
+body {
+  margin: 0px;
+  padding: 1rem;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' width='80' height='80'%3E%3Cpath fill='%23000000' fill-opacity='0.1' d='M14 16H9v-2h5V9.87a4 4 0 1 1 2 0V14h5v2h-5v15.95A10 10 0 0 0 23.66 27l-3.46-2 8.2-2.2-2.9 5a12 12 0 0 1-21 0l-2.89-5 8.2 2.2-3.47 2A10 10 0 0 0 14 31.95V16zm40 40h-5v-2h5v-4.13a4 4 0 1 1 2 0V54h5v2h-5v15.95A10 10 0 0 0 63.66 67l-3.47-2 8.2-2.2-2.88 5a12 12 0 0 1-21.02 0l-2.88-5 8.2 2.2-3.47 2A10 10 0 0 0 54 71.95V56zm-39 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm40-40a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM15 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm40 40a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'%3E%3C/path%3E%3C/svg%3E");
+  font-family: "Poiret One", cursive;
+  color: #000;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: clamp(14px, 3vw, 20px);
+}
+button {
+  font: inherit;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  outline: none;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  transition: 0.02 linear;
+}
+button:hover {
+  filter: brightness(120%);
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.3);
+}
+img {
+  max-width: 100%;
+}
+.quote-container {
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 960px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 25px 1px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.quote-text {
+  font-size: 2rem;
+}
+.quote-author {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
