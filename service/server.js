@@ -6,13 +6,15 @@ async function Scrape() {
   const browser = await puppeteer.launch({
     headless: false,
     defaultViewport: null,
-    args: ["--window-size=1366,768", "--window-position=0,0"],
-  });
-
-  browser.on("targetcreated", async (target) => {
-    if (target.type() === "other") {
-      console.log(await target.page());
-    }
+    args: [
+      "--window-size=1366,768",
+      "--window-position=0,0",
+      "--disable-notifications",
+      "--block-new-web-contents",
+      "--disable-print-preview",
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+    ],
   });
 
   const page = await browser.newPage();
@@ -24,6 +26,12 @@ async function Scrape() {
 
   await page.type(`.form-group [type="text"]`, process.env.EMAIL);
   await page.type(`.form-group [type="password"]`, process.env.PASSWORD);
+
+  await page.evaluateOnNewDocument(() => {
+    window.open = () => null;
+    window.print = () => null;
+  });
+
   await Promise.all([
     page.click(`.form-group [type="submit"]`),
     page.waitForNavigation({
